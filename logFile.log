@@ -1,0 +1,20 @@
+авг. 23, 2022 10:14:42 PM task3.utils.LogUtils setLogInfoForStep
+INFO: Step 1: Move to Home page.
+авг. 23, 2022 10:14:42 PM task3.utils.LogUtils setLogInfoForStep
+INFO: Step 2: Click 'Elements' button. On the opened page click 'Web Tables' option.
+авг. 23, 2022 10:14:43 PM task3.utils.LogUtils setLogInfoForActionWithElement
+INFO: Click elementsButton
+авг. 23, 2022 10:14:43 PM task3.utils.LogUtils setLogInfoForActionWithElement
+INFO: Click webTablesForm
+авг. 23, 2022 10:14:43 PM task3.utils.LogUtils setLogInfoForStep
+INFO: Step 3: Click 'Add' button.
+авг. 23, 2022 10:14:43 PM task3.utils.LogUtils setLogInfoForActionWithElement
+INFO: Click addButton
+авг. 23, 2022 10:14:43 PM task3.utils.LogUtils setLogInfoForStep
+INFO: Step 4: Insert 'User #' credentials from the table, than click 'Submit' button.
+авг. 23, 2022 10:15:01 PM task3.utils.LogUtils setLogInfoForStep
+INFO: Step 5: Click 'Delete' button in the line with 'User #'.
+авг. 23, 2022 10:15:02 PM task3.utils.LogUtils setLogInfoForStep
+INFO: Step 1: Move to Home page.
+авг. 23, 2022 10:15:02 PM task3.utils.LogUtils setLogInfoForStep
+INFO: Step 2: Click 'Elements' button. On the opened page click 'Web Tables' option.
