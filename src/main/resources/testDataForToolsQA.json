@@ -1,0 +1,22 @@
+{
+  "lengthOfRandomLine": 3,
+  "lineWithRandomTextBeginsWith": "You entered ",
+
+  "textInParentFrame": "Parent frame",
+  "textInChildFrame": "Child Iframe",
+
+  "firstNameOfUser1": "Jon",
+  "lastNameOfUser1": "Snow",
+  "emailOfUser1": "knownothing@gmail.com",
+  "ageOfUser1": 30,
+  "salaryOfUser1": 3000,
+  "departmentOfUser1": "alpha",
+
+  "firstNameOfUser2": "Buttercup",
+  "lastNameOfUser2": "Cumbersnatch",
+  "emailOfUser2": "BudapestCandygram@mail.ru",
+  "ageOfUser2": 41,
+  "salaryOfUser2": 2000,
+  "departmentOfUser2": "beta"
+
+}

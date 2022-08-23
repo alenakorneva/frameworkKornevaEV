@@ -1,0 +1,6 @@
+{
+  "url": "https://demoqa.com/",
+  "browser": "chrome",
+  "implicitTimeout": 15,
+  "explicitTimeout": 30
+}
