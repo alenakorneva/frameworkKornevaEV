@@ -1,21 +1,23 @@
 package task3.pages;
 
-import task3.elements.Frame;
+import org.openqa.selenium.By;
+import task3.browser.BrowserUtils;
 import task3.elements.OptionInList;
 import task3.elements.TextElement;
-import org.openqa.selenium.By;
-import task3.utils.CommonUtils;
+import task3.pages.frames.DownFrame;
+import task3.pages.frames.UpperFrame;
+import task3.utils.JavaScriptUtils;
 
-public class FrameForm extends BaseForm {
+public class FramesForm extends BaseForm {
 
     private static TextElement headerOfFrameForm = new TextElement("headerOfFrameForm", By.xpath("//div[contains(@class, 'main-header')]"));
     private OptionInList framesOption = new OptionInList("framesOption", By.xpath("//div[contains(@class, 'show')]//li[@id='item-2']"));
-    private Frame upperFrame = new Frame("upperFrame", By.id("frame1"));
+    private UpperFrame upperFrame = new UpperFrame("upperFrame", By.id("frame1"));
     private TextElement upperText = new TextElement("upperText", By.id("sampleHeading"));
-    private Frame downFrame = new Frame("downFrame", By.id("frame2"));
+    private DownFrame downFrame = new DownFrame("downFrame", By.id("frame2"));
     private TextElement downText = new TextElement("downText", By.id("sampleHeading"));
 
-    public FrameForm() {
+    public FramesForm() {
         super(headerOfFrameForm);
     }
 
@@ -24,21 +26,17 @@ public class FrameForm extends BaseForm {
     }
 
     public String getUpperText() {
-        CommonUtils.scrollUntilWebElementIsVisible(upperFrame.find());
-        upperFrame.openFrame();
+        JavaScriptUtils.scrollUntilWebElementIsVisible(BrowserUtils.findElementOnThePage(upperFrame.getLocator()));
+        BrowserUtils.openFrame(BrowserUtils.findElementOnThePage(upperFrame.getLocator()));
         String textInUpperFrame = upperText.getText();
-        upperFrame.goOutOfFrames();
+        BrowserUtils.goOutOfFrames();
         return textInUpperFrame;
     }
 
     public String getDownText() {
-        downFrame.openFrame();
+        BrowserUtils.openFrame(BrowserUtils.findElementOnThePage(downFrame.getLocator()));
         String textInDownFrame = downText.getText();
-        downFrame.goOutOfFrames();
+        BrowserUtils.goOutOfFrames();
         return textInDownFrame;
-    }
-
-    public void leaveFrames() {
-        downFrame.goOutOfFrames();
     }
 }

@@ -1,11 +1,12 @@
 package task3.pages;
 
 
+import org.openqa.selenium.By;
+import task3.browser.BrowserUtils;
 import task3.elements.Link;
 import task3.elements.OptionInList;
 import task3.elements.TextElement;
-import org.openqa.selenium.By;
-import task3.utils.CommonUtils;
+import task3.utils.JavaScriptUtils;
 
 public class LinksForm extends BaseForm {
 
@@ -20,7 +21,7 @@ public class LinksForm extends BaseForm {
 
     public void openLinksForm(){
         elementsOption.click();
-        CommonUtils.scrollUntilWebElementIsVisible(linksOption.find());
+        JavaScriptUtils.scrollUntilWebElementIsVisible(BrowserUtils.findElementOnThePage(linksOption.getLocator()));
         linksOption.click();
     }
 

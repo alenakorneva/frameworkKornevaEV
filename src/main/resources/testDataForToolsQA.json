@@ -1,4 +1,10 @@
 {
+  "alertOption": "Alerts",
+  "clickAlertText": "You clicked a button",
+  "confirmAlertText": "Do you confirm action?",
+  "textNextToConfirmAlert": "You selected Ok",
+  "promptAlertText":"Please enter your name",
+
   "lengthOfRandomLine": 3,
   "lineWithRandomTextBeginsWith": "You entered ",
 
@@ -17,6 +23,16 @@
   "emailOfUser2": "BudapestCandygram@mail.ru",
   "ageOfUser2": 41,
   "salaryOfUser2": 2000,
-  "departmentOfUser2": "beta"
+  "departmentOfUser2": "beta",
 
+  "browserWindowsOption": "Browser Windows",
+
+  "engineerAge": "23",
+  "percentageOfCalculationError": 2,
+
+  "requiredMonth": "February",
+  "requiredDay": "29",
+  "requiredDate": "02/29/2024",
+
+  "absolutePathForFile" : "D:\\a1qaTasks\\src\\main\\downloads\\sampleFile.jpeg"
 }

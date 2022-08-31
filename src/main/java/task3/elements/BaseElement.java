@@ -1,11 +1,9 @@
 package task3.elements;
 
-import task3.driver.DriverSingleton;
+import task3.browser.BrowserUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import task3.utils.LogUtils;
 
-import java.util.List;
 
 public abstract class BaseElement {
     protected String name;
@@ -20,31 +18,31 @@ public abstract class BaseElement {
         return name;
     }
 
-    public WebElement find() {
-        return DriverSingleton.getDriver().findElement(locator);
+    public By getLocator() {
+        return locator;
     }
 
     public void click() {
-        find().click();
+        BrowserUtils.findElementOnThePage(locator).click();
         LogUtils.setLogInfoForActionWithElement("Click ", name);
     }
 
     public String getText() {
         LogUtils.setLogInfoForActionWithElement("Get text of ", name);
-        return find().getText();
+        return BrowserUtils.findElementOnThePage(locator).getText();
     }
 
-    public boolean isDisplayed() {
+    public String getValueOfAttribute(String attribute){
+        return BrowserUtils.findElementOnThePage(locator).getAttribute(attribute);
+    }
+
+    public boolean isDisplayed(By locator) {
         LogUtils.setLogInfoForActionWithElement("Show that displayed ", name);
-        return find().isDisplayed();
+        return BrowserUtils.getListOfElements(locator).size() != 0;
     }
 
     public boolean isEnabled() {
         LogUtils.setLogInfoForActionWithElement("Show that enabled ", name);
-        return find().isEnabled();
-    }
-
-    public List<WebElement> getListOfElements() {
-        return DriverSingleton.getDriver().findElements(locator);
+        return BrowserUtils.findElementOnThePage(locator).isEnabled();
     }
 }

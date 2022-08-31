@@ -27,6 +27,7 @@ public class TestDataReaderFromConfigFile {
         }
     }
 
+
     public static String getStringValueFromJsonByKey(String key) {
         return (String) testDataReaderFromConfigFile.jsonObjectFromConfigFile.get(key);
     }
