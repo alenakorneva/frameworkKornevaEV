@@ -1,6 +1,12 @@
 package task3.utils;
 
+import task3.service.TestDataReaderFromConfigFile;
+
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
@@ -31,5 +37,18 @@ public class LogUtils {
 
     public static void setLogInfoForStep(int step, String stepDescription) {
         logger.info("Step " + step + ": " + stepDescription);
+    }
+
+    public static void cleanUpLogFile(String url) {
+        Path logFilePath = Path.of(url);
+        try {
+            if (Files.size(logFilePath) > 0) {
+                try (BufferedWriter bufferedWriter = Files.newBufferedWriter(Path.of(TestDataReaderFromConfigFile.getStringValueFromJsonByKey("logFilePath")), StandardOpenOption.WRITE)) {
+                    bufferedWriter.write("");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

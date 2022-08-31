@@ -1,14 +1,12 @@
 package task3.pages;
 
-import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.By;
+import task3.browser.BrowserUtils;
 import task3.elements.Button;
 import task3.elements.InputField;
-import task3.elements.ListOfElements;
 import task3.elements.TextElement;
-import org.openqa.selenium.By;
 import task3.service.User;
-import task3.utils.CommonUtils;
-import task3.utils.WaitUtils;
+import task3.utils.JavaScriptUtils;
 
 public class RegistrationForm extends BaseForm {
 
@@ -21,7 +19,6 @@ public class RegistrationForm extends BaseForm {
     private InputField department = new InputField("department", By.id("department"));
 
     private Button submitButton = new Button("submitButton", By.id("submit"));
-    private ListOfElements listOfElementsWithUsers = new ListOfElements("tableWithUsers", By.xpath(""));
 
     public RegistrationForm() {
         super(headerOfRegistrationForm);
@@ -38,15 +35,6 @@ public class RegistrationForm extends BaseForm {
 
     public void clickOnSubmitButton() {
         //use JS executor as submit button is invisible because of google advertisement in the footer
-        CommonUtils.executeScriptToClick(submitButton.find());
-    }
-
-    public boolean isClosed() {
-        try {
-            WaitUtils.waitUntilWebElementIsInvisible(headerOfRegistrationForm.find());
-            return false;
-        } catch (NoSuchElementException e) {
-            return true;
-        }
+        JavaScriptUtils.executeScriptToClick(BrowserUtils.findElementOnThePage(submitButton.getLocator()));
     }
 }

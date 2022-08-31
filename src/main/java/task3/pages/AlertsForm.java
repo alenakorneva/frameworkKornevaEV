@@ -1,12 +1,14 @@
 package task3.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import task3.browser.BaseAlert;
+import task3.browser.BrowserUtils;
 import task3.elements.Button;
 import task3.elements.TextElement;
-import org.openqa.selenium.By;
 import task3.service.TestDataReaderFromTestFile;
-import task3.utils.CommonUtils;
+import task3.utils.JavaScriptUtils;
+import task3.utils.StringUtils;
 
 public class AlertsForm extends BaseForm {
 
@@ -43,12 +45,8 @@ public class AlertsForm extends BaseForm {
     }
 
     public void clickOnButtonOfConfirmAlert() {
-        CommonUtils.scrollUntilWebElementIsVisible(confirmAlertButton.find());
+        JavaScriptUtils.scrollUntilWebElementIsVisible(BrowserUtils.findElementOnThePage(confirmAlertButton.getLocator()));
         confirmAlertButton.click();
-    }
-
-    public boolean confirmAlertIsOpened() {
-        return alertIsOpened(confirmBaseAlert);
     }
 
     public String getConfirmAlertText() {
@@ -81,7 +79,7 @@ public class AlertsForm extends BaseForm {
 
     public void enterRandomTextInPromptAlertInputArea() {
         int lengthOfRandomText = (int) TestDataReaderFromTestFile.getLongValueFromJsonByKey("lengthOfRandomLine");
-        randomlyGeneratedText = CommonUtils.getRandomlyGeneratedText(lengthOfRandomText);
+        randomlyGeneratedText = StringUtils.getRandomlyGeneratedText(lengthOfRandomText);
         promptBaseAlert.insertTextIntoAlert(randomlyGeneratedText);
     }
 

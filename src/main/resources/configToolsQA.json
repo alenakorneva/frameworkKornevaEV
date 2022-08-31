@@ -2,5 +2,11 @@
   "url": "https://demoqa.com/",
   "browser": "chrome",
   "implicitTimeout": 15,
-  "explicitTimeout": 30
+  "explicitTimeout": 30,
+  "awaitTimeout": 10,
+  "wayOfLaunchingFirefox": "incognito",
+  "wayOfLaunchingChrome": "--incognito",
+  "languageOfBrowser": "−−lang=en",
+  "directoryForDownloads": "D:\\a1qaTasks\\src\\main\\downloads",
+  "logFilePath": "logFile.log"
 }

@@ -1,6 +1,6 @@
 package task3.service;
 
-public class InstanceCreator {
+public class UserCreator {
 
     public static final String FIRST_NAME_USER_1 = "firstNameOfUser1";
     public static final String LAST_NAME_USER_1 = "lastNameOfUser1";
